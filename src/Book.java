@@ -20,4 +20,9 @@ public class Book {
     public int getYearPublication() {
         return this.yearPublication;
     }
+
+    @Override
+    public String toString() {
+        return "\"" + title + "\", de " + author + " (" + yearPublication + ")";
+    }
 }
