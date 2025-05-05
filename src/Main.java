@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         List<Book> library = new LinkedList<Book>();
         QueueBooks collectedBooks = new QueueBooks();
+        StackNavigationSystem navigation = new StackNavigationSystem();
 
         library.add(new Book("Dom Quixote de La Mancha", "Miguel de Cervantes", 1665));
         library.add(new Book("Metamorfose", "Franz Kafka", 1915));
@@ -34,6 +35,8 @@ public class Main {
 
                     System.out.println("\n");
 
+                    navigation.stackItem("Acessou a lista de livros.");
+
                     break;
                 }
 
@@ -49,6 +52,8 @@ public class Main {
 
                     collectedBooks.enqueue(book);
 
+                    navigation.stackItem("Adicionou o livro " + book.getTitle() + " ao acervo");
+
                     System.out.println("Livro adicionado ao acervo.");
 
                     collectedBooks.printQueueBooks();
@@ -57,6 +62,7 @@ public class Main {
                 }
 
                 case 3: {
+                    navigation.printStack();
 
                     break;
                 }
