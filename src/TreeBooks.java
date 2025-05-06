@@ -51,4 +51,8 @@ public class TreeBooks {
             inorderTraversal(node.right, books);
         }
     }
+
+    public Book getBookByTitle(String title) {
+        return listBooks().stream().filter(b -> b.getTitle().equalsIgnoreCase(title)).findFirst().orElse(null);
+    }
 }
