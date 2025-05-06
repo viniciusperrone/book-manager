@@ -37,7 +37,7 @@ public class UserInterface {
         System.out.println("Opção inválida!");
     }
 
-    String askContinuosLoop() {
+    String askContinuousLoop() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Desejar continuar (S/N): ");
