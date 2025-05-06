@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,18 +21,19 @@ public class Main {
 
         while (continuosLoop.equals("S")) {
             UserInterface prompt = new UserInterface();
+            ArrayList<Book> bookList = library.listBooks();
 
             prompt.chooseOption();
 
             switch (prompt.getOption()) {
                 case 1: {
-//                    int i = 1;
-//                    for (Book book : library) {
-//                        System.out.println(i + ". " + book);
-//                        i++;
-//                     }
-//
-//                    System.out.println("\n");
+                    int i = 1;
+                    for (Book book : bookList) {
+                        System.out.println(i + ". " + book);
+                        i++;
+                     }
+
+                    System.out.println("\n");
 
                     navigation.stackItem("Acessou a lista de livros.");
 
@@ -40,22 +41,22 @@ public class Main {
                 }
 
                 case 2: {
-//                    int indexBook = prompt.chooseIndexBook();
-//
-//                    if (indexBook < 0 || indexBook > library.size()) {
-//                        System.out.println("Livro não encontrado.");
-//
-//                        return;
-//                    }
-//                    Book book = library.get(indexBook - 1);
-//
-//                    collectedBooks.enqueue(book);
-//
-//                    navigation.stackItem("Adicionou o livro " + book.getTitle() + " ao acervo");
-//
-//                    System.out.println("Livro adicionado ao acervo.");
-//
-//                    collectedBooks.printQueueBooks();
+                    int indexBook = prompt.chooseIndexBook();
+
+                    if (indexBook < 0 || indexBook > bookList.size()) {
+                        System.out.println("Livro não encontrado.");
+
+                        return;
+                    }
+                    Book book = bookList.get(indexBook - 1);
+
+                    collectedBooks.enqueue(book);
+
+                    navigation.stackItem("Adicionou o livro " + book.getTitle() + " ao acervo");
+
+                    System.out.println("Livro adicionado ao acervo.");
+
+                    collectedBooks.printQueueBooks();
 
                     break;
                 }
