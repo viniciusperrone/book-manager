@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Node {
     Book book;
     Node left;
@@ -34,5 +36,19 @@ public class TreeBooks {
         }
 
         return current;
+    }
+
+    public ArrayList<Book> listBooks() {
+        ArrayList<Book> books = new ArrayList<>();
+        inorderTraversal(this.root, books);
+        return books;
+    }
+
+    private void inorderTraversal(Node node, ArrayList<Book> books) {
+        if (node != null) {
+            inorderTraversal(node.left, books);
+            books.add(node.book);
+            inorderTraversal(node.right, books);
+        }
     }
 }
