@@ -112,7 +112,7 @@ public class Main {
             }
 
             if (prompt.getOption() != 4) {
-                continuosLoop = prompt.askContinuosLoop();
+                continuosLoop = prompt.askContinuousLoop();
             }
 
         }
