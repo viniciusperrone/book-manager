@@ -13,7 +13,8 @@ public class UserInterface {
         System.out.println("1. Listar livros.");
         System.out.println("2. Adicionar livro para acervo.");
         System.out.println("3. Navegar histórico de ações.");
-        System.out.println("4. Sair");
+        System.out.println("4. Ver recomendações de livros.");
+        System.out.println("5. Sair");
 
         System.out.print("Escolha sua opção: ");
 
@@ -24,8 +25,8 @@ public class UserInterface {
         System.out.print("\n");
     }
 
-    int chooseIndexBook() {
-        System.out.print("Informe o índex do livro para fazer o acervo: ");
+    int chooseIndexBook(String message) {
+        System.out.print(message + " ");
 
         Scanner scanner = new Scanner(System.in);
 
